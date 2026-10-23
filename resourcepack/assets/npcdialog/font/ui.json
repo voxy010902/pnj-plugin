@@ -1,0 +1,40 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "npcdialog:font/portrait_default.png",
+      "ascent": 18,
+      "height": 24,
+      "chars": [
+        "\ue000"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "npcdialog:font/divider.png",
+      "ascent": 6,
+      "height": 8,
+      "chars": [
+        "\ue001"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "npcdialog:font/arrow.png",
+      "ascent": 7,
+      "height": 8,
+      "chars": [
+        "\ue002"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "npcdialog:font/bubble.png",
+      "ascent": 10,
+      "height": 16,
+      "chars": [
+        "\ue003"
+      ]
+    }
+  ]
+}

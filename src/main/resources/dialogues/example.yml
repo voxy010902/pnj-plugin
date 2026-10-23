@@ -1,0 +1,47 @@
+# Exemple de dialogue. Texte en MiniMessage (<gold>, <bold>...) ou codes &6.
+# Placeholders : %player% %npc% %npc_name% (+ PlaceholderAPI si installé)
+start: router
+nodes:
+  # Noeud "routeur" : redirige selon la permission (LuckPerms)
+  router:
+    branches:
+      - permission: "group.vip"
+        next: vip_intro
+      - next: intro            # sans permission = cas par défaut
+  intro:
+    speaker: "<gold>Garde du village"
+    text:
+      - "Halte, <yellow>%player%</yellow> ! Que viens-tu faire ici ?"
+      - "<gray>(Il te scrute de la tête aux pieds)"
+    choices:
+      - text: "Je cherche du travail."
+        next: job
+      - text: "Je voudrais acheter du matériel."
+        close: true                       # ferme le dialogue AVANT d'exécuter les commandes
+        commands:
+          - "[console] dm open shop %player%"   # exemple DeluxeMenus
+      - text: "<gold>[Staff]</gold> Ouvre-moi la salle du trône."
+        permission: "npcdialogue.admin"   # choix visible uniquement avec cette permission
+        next: staff
+      - text: "Au revoir."
+        close: true
+  job:
+    text:
+      - "Va voir le maire, il cherche toujours quelqu'un de courageux."
+    choices:
+      - text: "Merci, je vais y aller."
+        close: true
+        commands:
+          - "[message] <green>Quête acceptée !"
+      - text: "Retour"
+        next: intro
+  staff:
+    text: ["Bien sûr, Excellence. La porte est ouverte."]
+    next: intro                          # sans choix : bouton "Continuer"
+  vip_intro:
+    speaker: "<gold>Garde du village <light_purple>(salut VIP)"
+    text:
+      - "Ah, <light_purple>%player%</light_purple> ! Entrez, la maison vous est ouverte."
+    choices:
+      - text: "Merci."
+        close: true

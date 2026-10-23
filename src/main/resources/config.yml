@@ -1,0 +1,27 @@
+# ───────────── NpcDialogue ─────────────
+permissions:
+  # true  : un OP "sans la permission explicite" est traité comme n'ayant PAS la permission
+  #         (indispensable pour tester les dialogues "sans perm" avec un compte OP).
+  # false : comportement Bukkit classique (OP = toutes les permissions inconnues).
+  ignore-op: true
+
+ui:
+  # Police du resource pack (NpcDialogue-ResourcePack.zip)
+  font: "npcdialog:ui"
+  # Largeur (pixels) du texte et des boutons
+  text-width: 300
+  button-width: 280
+  close-with-escape: true
+  # Bouton "quitter" affiché sous les choix (vide = aucun)
+  exit-button: "<gray>[Fermer]"
+  continue-button: "<green>Continuer"
+  # Glyphes du resource pack (\uE000 = portrait, \uE001 = séparateur, \uE002 = flèche, \uE003 = bulle)
+  divider: "\uE001"
+  arrow: "\uE002"
+  default-portrait: "default"
+  # Ajoute tes propres portraits : nom -> glyphe (voir README pour créer un portrait)
+  portraits:
+    default: "\uE000"
+  sounds:
+    open: "entity.villager.ambient"
+    click: "ui.button.click"

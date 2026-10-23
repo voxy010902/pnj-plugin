@@ -1,0 +1,26 @@
+name: NpcDialogue
+version: '${project.version}'
+main: fr.npcdialogue.NpcDialoguePlugin
+api-version: '26.2'
+description: PNJ (skin joueur / ModelEngine) avec dialogues a choix, permissions LuckPerms et commandes.
+softdepend: [ModelEngine, LuckPerms, DeluxeMenus, PlaceholderAPI]
+
+commands:
+  npcd:
+    description: Gestion des PNJ
+    aliases: [pnj]
+    permission: npcdialogue.admin
+    usage: /npcd help
+  dialogue:
+    description: Gestion des dialogues
+    aliases: [dlg]
+    permission: npcdialogue.admin
+    usage: /dialogue help
+
+permissions:
+  npcdialogue.admin:
+    description: Creer / modifier PNJ et dialogues
+    default: op
+  npcdialogue.interact:
+    description: Parler aux PNJ
+    default: true
